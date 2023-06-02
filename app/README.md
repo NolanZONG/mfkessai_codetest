@@ -4,7 +4,6 @@ This is a prototyping solution for the MFKessai take-home assignment.
 
 It is implemented in Python 3.11.
 
-
 ## Tech Stack
 
 - [FastAPI](https://fastapi.tiangolo.com/lo/) - A modern, fast (high-performance), web framework for building APIs. 
@@ -62,14 +61,15 @@ This project was tested successfully on
 
 You can run it on your local environment by following these steps:
 
-
 1. Open the project folder and run the command
-   ```
-   docker-compose up -d
-   ```
+```shell
+docker-compose up -d
+```
+
 2. If all goes well, the app is ready now.
 ```shell
-developer@hostname:/mfkessai$ docker-compose ps
+docker-compose ps
+
          Name                        Command               State                          Ports
 ----------------------------------------------------------------------------------------------------------------------
 mfkessai_codetest_app_1   uvicorn main:app --host 0. ...   Up      0.0.0.0:8888->8888/tcp,:::8888->8888/tcp
@@ -80,7 +80,6 @@ mfkessai_codetest_db_1    docker-entrypoint.sh mysqld      Up      0.0.0.0:3306-
 ```
 developer@hostname:/mfkessai$ go test main_test.go
 ok      command-line-arguments  0.381s
-developer@hostname:/mfkessai$
 ```
 
 4. You can use `docker-compose down` to stop and remove the service
