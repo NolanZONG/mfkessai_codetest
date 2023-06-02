@@ -1,4 +1,9 @@
-FROM golang:1.18
+FROM python:3.11
 
-COPY main.go .
-CMD go run main.go
+WORKDIR /code
+
+COPY ./* /code/
+
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8888"]

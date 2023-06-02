@@ -4,8 +4,8 @@ Transaction Repository
 This module provides repositories class for managing table data in the database.
 """
 
-from .model import User, Transaction
-from .database import SessionLocal
+from model import User, Transaction
+from database import SessionLocal
 
 
 class UserRepository:

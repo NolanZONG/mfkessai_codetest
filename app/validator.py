@@ -7,7 +7,7 @@ This module defines the validator classes for validating transaction data parame
 
 from pydantic import BaseModel, validator
 
-from .repository import UserRepository
+from repository import UserRepository
 
 
 class TransactionBodyValidator(BaseModel):

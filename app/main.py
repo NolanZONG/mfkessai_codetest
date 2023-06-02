@@ -7,15 +7,15 @@ It provides one API:
 """
 from typing import Annotated
 
-from fastapi import FastAPI, Request, status, Header, HTTPException
+from fastapi import FastAPI, status, Header, HTTPException
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 
-from .repository import TransactionRepository
-from .schema import Transaction
-from .validator import TransactionBodyValidator
+from repository import TransactionRepository
+from schema import Transaction
+from validator import TransactionBodyValidator
 
 
 description = """
@@ -46,11 +46,10 @@ app = FastAPI(
 
 
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
+async def validation_exception_handler(exc: RequestValidationError) -> JSONResponse:
     """
     This function is an error handler to return validation error
 
-    :param request: request object
     :param exc: exception context
     :return: error message
     """
